@@ -1,0 +1,8 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local build output (GitHub Actions builds the site; docs_src/, mkdocs.yml and overrides/ ARE committed)
+site/

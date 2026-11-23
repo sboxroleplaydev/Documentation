@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sboxroleplaydev.github.io/Documentation/sitemap.xml

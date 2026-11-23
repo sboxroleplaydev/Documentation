@@ -1,0 +1,160 @@
+site_name: "Roleplay for s&box"
+site_description: "Documentation of Roleplay, the Garry's Mod-style Lua framework for s&box: sandboxed Lua 5.1 gamemodes, the sandbox base gamemode (props, tool gun, physgun, weapons, Q menu), DarkRP and the full Lua API reference."
+site_author: "Roleplay"
+site_url: "https://sboxroleplaydev.github.io/Documentation/"
+docs_dir: docs_src
+site_dir: site
+use_directory_urls: false
+extra_css: [stylesheets/extra.css]
+extra:
+  generator: false
+theme:
+  name: material
+  custom_dir: overrides
+  font: { text: Inter, code: JetBrains Mono }
+  icon: { logo: material/code-braces }
+  features: [navigation.tabs, navigation.tabs.sticky, navigation.sections, navigation.top, search.suggest, search.highlight, search.share, content.code.copy, content.code.annotate, toc.follow]
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: cyan
+      toggle: { icon: material/weather-sunny, name: Light mode }
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: indigo
+      toggle: { icon: material/weather-night, name: Dark mode }
+markdown_extensions:
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+  - def_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight: { anchor_linenums: true, use_pygments: true, auto_title: false }
+  - pymdownx.inlinehilite: { custom_inline: [] }
+  - pymdownx.tabbed: { alternate_style: true }
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc: { permalink: true }
+validation:
+  links: { not_found: ignore, absolute_links: ignore, unrecognized_links: ignore }
+  nav: { omitted_files: ignore }
+nav:
+  - { "Home": "index.md" }
+  - "Lua API":
+      - { "Overview": "api/index.md" }
+      - { "Function index": "api/functions.md" }
+      - "Getting started":
+          - { "Realms and files": "api/getting-started/realms-and-files.md" }
+          - { "Gamemodes and derivation": "api/getting-started/gamemodes-and-derivation.md" }
+          - { "Hooks called by the framework": "api/getting-started/hooks-called-by-the-framework.md" }
+          - { "Addons": "api/getting-started/addons.md" }
+          - { "Modules and files": "api/getting-started/modules-and-files.md" }
+          - { "API versions and migration": "api/getting-started/api-versions-and-migration.md" }
+      - "Core":
+          - { "Core libraries": "api/core/core-libraries.md" }
+          - { "GMod compatibility helpers": "api/core/gmod-compatibility-helpers.md" }
+          - { "Game / map": "api/core/game-map.md" }
+          - { "Content": "api/core/content.md" }
+          - { "Players": "api/core/players.md" }
+          - { "Networked variables": "api/core/networked-variables.md" }
+          - { "Entities": "api/core/entities.md" }
+          - { "Models, materials and textures": "api/core/models-materials-and-textures.md" }
+          - { "Networking": "api/core/networking.md" }
+          - { "Storage": "api/core/storage.md" }
+          - { "Physics, coordinates and effects": "api/core/physics-coordinates-and-effects.md" }
+      - "Client":
+          - { "Keyboard": "api/client/keyboard.md" }
+          - { "Player clothing and skin": "api/client/player-clothing-and-skin.md" }
+          - { "Keybinds": "api/client/keybinds.md" }
+          - { "Cookies": "api/client/cookies.md" }
+          - { "UI": "api/client/ui.md" }
+          - { "3D2D and immediate drawing": "api/client/3d2d-and-immediate-drawing.md" }
+          - { "View and mouse": "api/client/view-and-mouse.md" }
+          - { "Beams, glows and outlines": "api/client/beams-glows-and-outlines.md" }
+      - "Base gamemode":
+          - { "Weapons": "api/base-gamemode/weapons.md" }
+          - { "Props, undo and the physics gun": "api/base-gamemode/props-undo-and-the-physics-gun.md" }
+          - { "Tool gun": "api/base-gamemode/tool-gun.md" }
+          - { "Spawn menu and context menu": "api/base-gamemode/spawn-menu-and-context-menu.md" }
+          - { "UI components": "api/base-gamemode/ui-components.md" }
+          - { "Base gamemode": "api/base-gamemode/base-gamemode.md" }
+          - { "Sandbox": "api/base-gamemode/sandbox.md" }
+      - "Compatibility":
+          - { "Differences from Garry's Mod": "api/compatibility/differences-from-garry-s-mod.md" }
+  - "Reference":
+      - { "Tool gun modes": "source/tools.md" }
+      - { "Permissions": "source/permissions.md" }
+      - { "Commands": "source/commands.md" }
+      - { "Limits": "source/limits.md" }
+      - "Modules: base":
+          - { "bots": "source/base/bots.md" }
+          - { "chat": "source/base/chat.md" }
+          - { "context": "source/base/context.md" }
+          - { "health": "source/base/health.md" }
+          - { "help": "source/base/help.md" }
+          - { "keyhints": "source/base/keyhints.md" }
+          - { "limits": "source/base/limits.md" }
+          - { "numpad": "source/base/numpad.md" }
+          - { "pause": "source/base/pause.md" }
+          - { "permissions": "source/base/permissions.md" }
+          - { "props": "source/base/props.md" }
+          - { "scoreboard": "source/base/scoreboard.md" }
+          - { "spawnmenu": "source/base/spawnmenu.md" }
+          - { "tools": "source/base/tools.md" }
+          - { "ui": "source/base/ui.md" }
+          - { "undo": "source/base/undo.md" }
+          - { "weapons": "source/base/weapons.md" }
+      - "Modules: darkrp":
+          - { "admin": "source/darkrp/admin.md" }
+          - { "chat": "source/darkrp/chat.md" }
+          - { "core": "source/darkrp/core.md" }
+          - { "doors": "source/darkrp/doors.md" }
+          - { "entities": "source/darkrp/entities.md" }
+          - { "hud": "source/darkrp/hud.md" }
+          - { "hunger": "source/darkrp/hunger.md" }
+          - { "items": "source/darkrp/items.md" }
+          - { "jobs": "source/darkrp/jobs.md" }
+          - { "keybinds": "source/darkrp/keybinds.md" }
+          - { "laws": "source/darkrp/laws.md" }
+          - { "menu": "source/darkrp/menu.md" }
+          - { "money": "source/darkrp/money.md" }
+          - { "police": "source/darkrp/police.md" }
+          - { "weapons": "source/darkrp/weapons.md" }
+      - "Modules: framework":
+          - { "sh_core.lua": "source/framework/sh_core.md" }
+          - { "sh_gmod.lua": "source/framework/sh_gmod.md" }
+  - "Engine API":
+      - { "LuaAddons": "engine/luaaddons.md" }
+      - { "LuaAppearance": "engine/luaappearance.md" }
+      - { "LuaBoxSets": "engine/luaboxsets.md" }
+      - { "LuaClothing": "engine/luaclothing.md" }
+      - { "LuaConCommand": "engine/luaconcommand.md" }
+      - { "LuaContentLib": "engine/luacontentlib.md" }
+      - { "LuaDataFiles": "engine/luadatafiles.md" }
+      - { "LuaDraw": "engine/luadraw.md" }
+      - { "LuaEntities": "engine/luaentities.md" }
+      - { "LuaEntity": "engine/luaentity.md" }
+      - { "LuaGadgets": "engine/luagadgets.md" }
+      - { "LuaHud": "engine/luahud.md" }
+      - { "LuaInput": "engine/luainput.md" }
+      - { "LuaJson": "engine/luajson.md" }
+      - { "LuaKeybind": "engine/luakeybind.md" }
+      - { "LuaNet": "engine/luanet.md" }
+      - { "LuaNetVars": "engine/luanetvars.md" }
+      - { "LuaPhysics": "engine/luaphysics.md" }
+      - { "LuaPlayers": "engine/luaplayers.md" }
+      - { "LuaRender": "engine/luarender.md" }
+      - { "LuaRender.Fx": "engine/luarender-fx.md" }
+      - { "LuaSoundPatch": "engine/luasoundpatch.md" }
+      - { "LuaStorage": "engine/luastorage.md" }
+      - { "LuaUi": "engine/luaui.md" }
+      - { "LuaUi.World": "engine/luaui-world.md" }
+      - { "LuaView": "engine/luaview.md" }
+  - "Guides":
+      - { "Server owners": "guides/server-owners.md" }
+      - { "Dedicated server": "guides/dedicated-server.md" }

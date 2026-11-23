@@ -1,0 +1,38 @@
+{#- Search-engine and social metadata for every page. Keywords/description come from build_docs.py (mkdocs.yml + page front matter). -#}
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  {% if page and page.is_homepage %}
+    <title>Roleplay for s&amp;box - Lua framework, sandbox and DarkRP gamemodes | Documentation</title>
+  {% elif page and page.title %}
+    <title>{{ page.title | striptags }} - Roleplay Lua framework for s&amp;box</title>
+  {% else %}
+    <title>{{ config.site_name }}</title>
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+  {% set desc = (page.meta.description if page and page.meta and page.meta.description else config.site_description) %}
+  {% set ttl = (page.title | striptags) if page and page.title and not page.is_homepage else "Roleplay for s&box - Lua framework documentation" %}
+  <meta name="keywords" content="s&amp;box, sbox, roleplay, s&amp;box roleplay, sandbox, s&amp;box sandbox, lua, lua framework, s&amp;box lua, lua api, gamemode, gmod, garry's mod, darkrp, darkrp s&amp;box, tool gun, physgun, addons, scripting, server owners, dedicated server, documentation">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Roleplay for s&amp;box">
+  <meta property="og:title" content="{{ ttl }}">
+  <meta property="og:description" content="{{ desc }}">
+  {% if page and page.canonical_url %}<meta property="og:url" content="{{ page.canonical_url }}">{% endif %}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ ttl }}">
+  <meta name="twitter:description" content="{{ desc }}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": {{ ttl | tojson }},
+    "description": {{ desc | tojson }},
+    "inLanguage": "en",
+    "about": ["s&box", "Lua", "Garry's Mod style gamemodes", "DarkRP"],
+    "isPartOf": { "@type": "WebSite", "name": "Roleplay for s&box", "sameAs": ["https://sbox.game/roleplaydev/roleplay", "https://discord.gg/cSsA7QruyK"] }
+  }
+  </script>
+{% endblock %}
